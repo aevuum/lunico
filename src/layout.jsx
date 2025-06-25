@@ -1,15 +1,14 @@
-import Header from './components/header';
-import Footer from './components/footer';
-import MainPage from './pages/main/page';
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import MainPage from './pages/main/page.jsx'
+import Header from './components/header.jsx'
+import Footer from './components/footer.jsx'
 
-const App = () => {
-	return (
-		<div className='bg'>
-			<Header />
-			<MainPage />
-			<Footer/>
-		</div>
-	);
-}
-
-export default App;
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <Header />
+    <MainPage />
+    <Footer />
+  </StrictMode>,
+)

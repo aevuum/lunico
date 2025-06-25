@@ -1,10 +1,8 @@
-import Home from "../../components/home";
+import Main from '../../components/main'
+import '../../index.css'
 
-const MainPage = () => {
+export default function MainPage() {
   return (
-    <Home />
+    <Main />
   )
 }
-
-
-export default MainPage;
