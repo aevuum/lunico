@@ -8,13 +8,27 @@ const MainButton = ({ children, className }) => {
   return (
     <button
       className={clsx(
-        "flex rounded-2xl bg-amber-300 border-amber-300 border-4",
+        "relative inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-full overflow-hidden transition-all duration-300 ease-in-out",
+        "before:absolute before:right-0 before:top-0 before:w-1/2 before:h-full",
+        "before:bg-gradient-to-l before:from-[#BA935A] before:to-transparent before:opacity-70",
+        "before:transition-transform before:duration-300 before:ease-in-out",
+        "before:origin-right hover:before:w-full hover:before:origin-right",
+        "bg-[#B2884E] text-white",
+        "hover:brightness-110 active:brightness-90",
         className
       )}
-      onMouseEnter={setHover(true)}
-      onMouseLeave={setHover(false)}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
-      {children} <FaArrowRightLong className={setHover ? "ml-4" : "ml-2"} />
+      <span className="flex items-center gap-2 z-10">
+        {children}
+        <FaArrowRightLong
+          className={clsx(
+            "text-white transition-transform duration-300 ease-in-out",
+            hover && "translate-x-1"
+          )}
+        />
+      </span>
     </button>
   );
 };
