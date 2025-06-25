@@ -1,5 +1,6 @@
 import '../index.css';
 import LunicoLogo from './icons/logo';
+import MainButton from './main-button';
 
 const Header = () => {
   return (
@@ -11,6 +12,7 @@ const Header = () => {
         <li><a href='#'>Bar</a></li>
         <li><a href='#'>Contact Us</a></li>
       </ul>
+      <MainButton>Book Now</MainButton>
     </header>
   );
 };
