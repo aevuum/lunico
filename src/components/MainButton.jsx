@@ -8,7 +8,7 @@ const MainButton = ({ children, className }) => {
   return (
     <button
       className={clsx(
-        "relative inline-flex items-center justify-center px-6 py-3 text-sm font-medium rounded-full overflow-hidden transition-all duration-300 ease-in-out",
+        "relative inline-flex items-center justify-center px-8 py-4 text-sm font-medium rounded-full overflow-hidden transition-all duration-300 ease-in-out",
         "before:absolute before:right-0 before:top-0 before:w-1/2 before:h-full",
         "before:bg-gradient-to-l before:from-[#BA935A] before:to-transparent before:opacity-70",
         "before:transition-transform before:duration-300 before:ease-in-out",
