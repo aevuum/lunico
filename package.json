@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@splidejs/react-splide": "^0.7.12",
+    "@splidejs/splide": "^4.1.4",
     "@tailwindcss/vite": "^4.1.10",
     "clsx": "^2.1.1",
     "react": "^19.1.0",

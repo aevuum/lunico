@@ -6,19 +6,23 @@ import Carousel from "./Carousel";
 import Typography from "./Typography";
 import SideButton from "./SideButton";
 
-const images = [{
-  'imageOne': '/images/3-1-576x720.jpg',
-  'imageTwo': '/images/9-1-891x1280.jpg',
-  'imageThree': '/images/10-1-720x405.jpg',
-}]
-
+const images = [
+  { id: 1, src: "3-1-576x720.jpg", alt: "Image 1" },
+  { id: 2, src: "9-1-891x1280.jpg", alt: "Image 2" },
+  { id: 3, src: "10-1-720x405.jpg", alt: "Image 3" },
+];
 
 const Main = () => {
   const isScrollDown = useScroll();
   return (
     <main>
       <section className="relative w-full h-max min-h-[50rem] bg-cover bg-center bg-[url('/images/lunico-dubai-interior-2-1.jpg')] flex items-center justify-center overflow-hidden">
-        <Header className={clsx('z-10 duration-300 ease-in-out', isScrollDown ? 'w-full bg-black/60' : '')} />
+        <Header
+          className={clsx(
+            "z-10 duration-300 ease-in-out",
+            isScrollDown ? "w-full bg-black/50" : ""
+          )}
+        />
         <div className="absolute inset-0 bg-black/60 z-0"></div>
         <div
           className="absolute inset-0 z-0"
@@ -27,7 +31,9 @@ const Main = () => {
           }}
         ></div>
         <div className="mt-14 relative text-white text-center font-[Against]">
-          <Typography className="text-3xl text-white">Taste Your Destiny</Typography>
+          <Typography className="text-3xl text-white">
+            Taste Your Destiny
+          </Typography>
           <p className="text-xl mt-2">Book your table</p>
         </div>
       </section>
@@ -61,45 +67,56 @@ const Main = () => {
         </div>
         <hr className="mt-6 h-0.5 max-w-[95rem] mx-auto bg-gradient-to-l from-[#BA935A] to-transparent" />
         <div className="text-white mt-24 text-center">
-            <Typography className='text-[#E4C166] mb-4'>Welcome to Lúnico</Typography>
-            <h2 className="text-4xl mb-8">
-              Listen to your inner guide and let the moon illuminate <br /> your desires
-            </h2>
-            <div className="relative max-w-xl mx-auto leading-relaxed">
-              <p>
-              Lúnico is an innovative Spanish fine-dining restaurant & late night
-              bar nestled in the enchanting J1 Beach, Dubai. Lúnico blends the
-              celestial with the culinary inviting guests to explore their
-              destinies through taste. <br className="mb-4"/> Designed with a harmonious blend of natural
-              stone and metallic accents, Lúnico creates an ethereal ambiance that
-              captivates the senses. Each dish is a celebration of Spanish food,
-              reimagined with the touch of our talented Head Chef, John Evans. <br className="mb-4"/> 
-              Lúnico has its three distinct realms—a sophisticated dining area, an
-              intimate bar at La Mer, and a breathtaking terrace—invite you to
-              join us and let your journey unfold through a dining experience that
-              taps into the power of intuition and personal destiny.
+          <Typography className="text-[#E4C166] mb-4">
+            Welcome to Lúnico
+          </Typography>
+          <h2 className="text-4xl mb-8">
+            Listen to your inner guide and let the moon illuminate <br /> your
+            desires
+          </h2>
+          <div className="relative max-w-xl mx-auto leading-relaxed">
+            <p>
+              Lúnico is an innovative Spanish fine-dining restaurant & late
+              night bar nestled in the enchanting J1 Beach, Dubai. Lúnico blends
+              the celestial with the culinary inviting guests to explore their
+              destinies through taste. <br className="mb-4" /> Designed with a
+              harmonious blend of natural stone and metallic accents, Lúnico
+              creates an ethereal ambiance that captivates the senses. Each dish
+              is a celebration of Spanish food, reimagined with the touch of our
+              talented Head Chef, John Evans. <br className="mb-4" />
+              Lúnico has its three distinct realms—a sophisticated dining area,
+              an intimate bar at La Mer, and a breathtaking terrace—invite you
+              to join us and let your journey unfold through a dining experience
+              that taps into the power of intuition and personal destiny.
             </p>
           </div>
           <div className="mt-8">
-            <MainButton className=''>Book Now</MainButton>
+            <MainButton className="">Book Now</MainButton>
           </div>
         </div>
       </section>
-      <section>
-        <div>
-          {/* TODO: Доделать слайдер */}
-        </div>
+      <section className="bg-black w-full h-max min-h-[50rem] overflow-x-hidden">
+        <Carousel images={images}></Carousel>
       </section>
       <section className="w-full h-max min-h-[20rem] bg-cover bg-center bg-[url('/images/img-bananaleaves-8-scaled-1.jpg')]">
         <div className="flex flex-col items-center justify-center h-full text-center px-4 py-16">
           <Typography className="text-white text-6xl mb-12">Menus</Typography>
           <div className="flex flex-col items-center gap-4">
-            {/* TODO: Добавить ссылки */}
-            <SideButton>A la carte</SideButton>
-            <SideButton>Desserts</SideButton>
-            <SideButton>Drink Menu</SideButton>
-            <SideButton>Brunch Menu</SideButton>
-            <SideButton>Viva La Noche</SideButton>
+            <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/Lunico_A_LA_CARTE_180x340_01-2025-web.pdf">
+              A la carte
+            </SideButton>
+            <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/Lunico_Desserts_180x160_01-2025_Final_WEB.pdf">
+              Desserts
+            </SideButton>
+            <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/LUN_DRINK_MENU_WEB-1.pdf">
+              Drink Menu
+            </SideButton>
+            <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/LUNICO_Brunch_Menu_152x340_03-202_04_WEB.pdf">
+              Brunch Menu
+            </SideButton>
+            <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/LUNICO_Viva_La_Noche_Menu_152x340_03-2025_05_WEB.pdf">
+              Viva La Noche
+            </SideButton>
           </div>
         </div>
       </section>

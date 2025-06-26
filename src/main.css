@@ -1,6 +1,22 @@
 @import "tailwindcss";
+@import '@splidejs/react-splide/css';
+@import '@splidejs/react-splide/css/core';
 
 
 * {
   font-family: "Montserrat", sans-serif;
+}
+
+
+.splide__pagination {
+  @apply flex justify-center gap-2 mt-4;
+}
+
+.splide__pagination__page {
+  @apply w-3 h-3 rounded-full bg-gray-300 transition-all duration-300;
+}
+
+.splide__pagination__page.is-active,
+.splide__pagination__page:hover {
+  @apply bg-blue-500 scale-125;
 }
