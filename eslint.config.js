@@ -1,4 +1,4 @@
-import js from '@esl<link rel="favicon" href="/public/favicon/favicon.ico">int/js'
+import js from '@esl<link rel="favicon" href="/favicon/favicon.ico">int/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'

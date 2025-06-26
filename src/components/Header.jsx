@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import "../index.css";
-import LunicoLogo from "./icons/logo";
+import "../main.css";
+import LunicoLogo from "./icons/Logo";
 import MainButton from "./MainButton";
 
 const Header = ({ className }) => {

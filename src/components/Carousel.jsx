@@ -8,7 +8,7 @@ const Carousel = ({ preview, images }) => {
     <div className="w-full max-w-6xl mx-auto px-4 flex">
       <div className="w-[50rem] relative">
         <img 
-          src={`/public/images/${preview.src}`} 
+          src={`/images/${preview.src}`} 
           alt={preview.alt} 
           className="h-[40rem] w-full object-cover rounded-l-lg"
         />
@@ -37,7 +37,7 @@ const Carousel = ({ preview, images }) => {
           {images.map((image) => (
             <SplideSlide key={image.id}>
               <img
-                src={`/public/images/${image.src}`}
+                src={`/images/${image.src}`}
                 alt={image.alt}
                 className="w-full h-full object-cover rounded-r-lg"
               />

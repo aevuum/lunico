@@ -7,11 +7,27 @@ import Typography from "./Typography";
 import SideButton from "./SideButton";
 import { useEffect, useRef, useState } from "react";
 import TransparentButton from "./TransparentButton";
+import CarouselFour from "./CarouselFour";
 
 const images = [
   { id: 1, src: "3-1-576x720.jpg", alt: "Image 1" },
   { id: 2, src: "9-1-891x1280.jpg", alt: "Image 2" },
   { id: 3, src: "10-1-720x405.jpg", alt: "Image 3" },
+];
+
+const imagesTwo = [
+  {
+    top: { src: "5-1-853x1280.jpg", alt: "Top Image" },
+    bottom: { src: "4-1-480x720.jpg", alt: "Bottom Image" },
+    left: { src: "7-1-480x720.jpg", alt: "Left Image" },
+    right: { src: "2-1-1-576x720.jpg", alt: "Right Image" },
+  },
+  {
+    top: { src: "9-1-891x1280.jpg", alt: "Another Top Image" },
+    bottom: { src: "10-1-720x405.jpg", alt: "Another Bottom Image" },
+    left: { src: "img-video-2.jpg", alt: "Another Left Image" },
+    right: { src: "3-1-576x720.jpg", alt: "Another Right Image" },
+  },
 ];
 
 const preview = {
@@ -176,7 +192,7 @@ const Main = () => {
             </Typography>
           </div>
           <img
-            src="/public/gif/5_Water-1-ezgif.com-video-to-gif-converter.gif"
+            src="/gif/5_Water-1-ezgif.com-video-to-gif-converter.gif"
             alt="gif"
             className="h-[60rem] w-[40rem] rounded-full shadow-xl ml-34"
           />
@@ -197,7 +213,7 @@ const Main = () => {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <img
-              src="/public/images/img-restaurant-2-1.png"
+              src="/images/img-restaurant-2-1.png"
               alt="image"
               className="h-[50rem] rounded-xl shadow-xl w-full max-w-md object-cover"
             />
@@ -206,7 +222,7 @@ const Main = () => {
         <div className="max-w-6xl py-12 mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
           <div className="md:w-1/2 flex justify-center order-2 md:order-1">
             <img
-              src="/public/images/img-bar-2-1-691x720.png"
+              src="/images/img-bar-2-1-691x720.png"
               alt="image"
               className="h-[50rem] rounded-xl shadow-xl w-full max-w-md object-cover"
             />
@@ -237,12 +253,20 @@ const Main = () => {
           </div>
           <div className="md:w-1/2 flex justify-center">
             <img
-              src="/public/images/9-1-501x720.png"
+              src="/images/9-1-501x720.png"
               alt="image"
               className="h-[50rem] w-full rounded-xl shadow-xl max-w-md object-cover"
             />
           </div>
         </div>
+      </section>
+      <section className="bg-black w-full h-max min-h-[50rem] overflow-x-hidden">
+        <div className="py-24">
+          <CarouselFour images={imagesTwo}/>
+        </div>
+      </section>
+      <section className="bg-cover bg-center bg-[url('/images/1_View21-scaled-1.jpg')] w-full h-max min-h-[50rem] overflow-x-hidden">
+
       </section>
     </main>
   );

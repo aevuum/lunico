@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'Against';
-  src: url('/public/fonts/Against.ttf') format('truetype');
+  src: url('/fonts/Against.ttf');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

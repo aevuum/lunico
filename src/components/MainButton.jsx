@@ -14,7 +14,7 @@ const MainButton = ({ children, className }) => {
         "before:transition-transform before:duration-300 before:ease-in-out",
         "before:origin-right hover:before:w-full hover:before:origin-right",
         "bg-[#B2884E] text-white",
-        "hover:brightness-110 active:brightness-90",
+        "hover:brightness-110 active:brightness-90 w-48",
         className
       )}
       onMouseEnter={() => setHover(true)}
