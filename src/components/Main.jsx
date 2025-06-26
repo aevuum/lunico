@@ -5,6 +5,7 @@ import MainButton from "./MainButton";
 import Carousel from "./Carousel";
 import Typography from "./Typography";
 import SideButton from "./SideButton";
+import { useEffect, useRef, useState } from "react";
 
 const images = [
   { id: 1, src: "3-1-576x720.jpg", alt: "Image 1" },
@@ -19,7 +20,32 @@ const preview = {
 };
 
 const Main = () => {
+  const [offset, setOffset] = useState(0);
+  const sectionRef = useRef(null);
   const isScrollDown = useScroll();
+
+
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (sectionRef.current) {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const slowOffset = scrollTop * 0.10;
+
+            setOffset(slowOffset);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main>
       <section className="relative w-full h-max min-h-[50rem] bg-cover bg-center bg-[url('/images/lunico-dubai-interior-2-1.jpg')] flex items-center justify-center overflow-hidden">
@@ -126,14 +152,35 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <section className="bg-black w-full h-max min-h-[50rem] overflow-x-hidden">
+      <section
+      ref={sectionRef}
+      className="relative w-full h-screen overflow-hidden bg-black"
+    >
+      {/* Фоновое изображение с обратным параллаксом */}
+      <div
+        className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 ease-in-out"
+        style={{
+          backgroundImage: "url('/images/pattern-golf.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          transform: `translateY(${isScrollDown ? -offset : offset}px)`,
+          willChange: 'transform', // оптимизация производительности
+        }}
+      />
+
+      {/* Контент поверх фона */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center py-12">
         <div>
-          <div>
-            <p className="text-sm text-amber-300">Spanish fine-dining</p>
-            <Typography className='text-white'>Taste your destiny</Typography>
-          </div>
+          <p className="text-xl text-amber-300">Spanish fine-dining</p>
+          <Typography className="text-white text-8xl mt-4">Taste your destiny</Typography>
         </div>
-      </section>
+        <img
+          src="/public/gif/5_Water-1-ezgif.com-video-to-gif-converter.gif"
+          alt="gif"
+          className="h-[60rem] w-[40rem] rounded-full shadow-xl ml-34"
+        />
+      </div>
+    </section>
     </main>
   );
 };
