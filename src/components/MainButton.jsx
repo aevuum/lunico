@@ -8,24 +8,18 @@ const MainButton = ({ children, className }) => {
   return (
     <button
       className={clsx(
-        "relative inline-flex items-center justify-center px-8 py-4 text-sm font-medium rounded-full overflow-hidden transition-all duration-300 ease-in-out",
-        "before:absolute before:right-0 before:top-0 before:w-1/2 before:h-full",
-        "before:bg-gradient-to-l from-[#AB8E61] via-[#EBEBB0] to-[#B69E6D] before:to-transparent before:opacity-70",
-        "before:transition-transform before:duration-300 before:ease-in-out",
-        "before:origin-right hover:before:w-full hover:before:origin-right",
-        "bg-[#B2884E] text-white",
-        "hover:brightness-110 active:brightness-90 w-48",
+        "max-w-42 relative inline-flex px-8 py-4 text-sm font-medium rounded-full overflow-hidden transition-all duration-300 ease-in-out bg-gradient-to-r from-[#B0854B] via-[#EADDA7] to-[#B0854B]",
         className
       )}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <span className="text-black flex items-center gap-2 z-10">
+      <span className="text-black flex gap-2 z-10">
         {children}
         <FaArrowRightLong
           className={clsx(
             "transition-transform duration-300 ease-in-out",
-            hover && "translate-x-1"
+            hover && "translate-x-4"
           )}
         />
       </span>

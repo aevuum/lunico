@@ -14,8 +14,7 @@ const Carousel = ({ preview, images }) => {
         />
         <div className="absolute bottom-5 left-0 right-0 p-6 rounded-bl-lg">
           <p className="text-white text-sm">{preview.description}</p>
-          {/* TODO: Якорь */}
-          <NoBorderButton className='pt-4' link='#'>Discover</NoBorderButton>
+          <NoBorderButton className='pt-4' link='#menus'>Discover</NoBorderButton>
         </div>
       </div>
       <div className="w-2/3 relative">
@@ -25,7 +24,6 @@ const Carousel = ({ preview, images }) => {
             direction: 'ltr',
             perPage: 1,
             pagination: true,
-            paginationDirection: 'rtl',
             arrows: false,
             drag: true,
             height: '40rem',

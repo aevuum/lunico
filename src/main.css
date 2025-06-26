@@ -12,10 +12,13 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .custom-pagination {
   @apply absolute left-1/3 right-0 flex justify-center;
-  bottom: -2rem;
-  transform: translateX(-100%);
+  transform: translateX(-50%);
 }
 
 .splide__pagination__page {

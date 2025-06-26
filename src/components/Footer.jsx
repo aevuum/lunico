@@ -16,12 +16,10 @@ const Footer = () => {
             <InlineButton link="#">Press Enquiries</InlineButton>
           </div>
           <div className="flex space-x-6 mt-8">
-            <LogoFacebook className="w-8 h-8" />
-            <LogoInst className="w-8 h-8" />
+            <LogoFacebook link='https://www.facebook.com/lunicoae' className="w-8 h-8" />
+            <LogoInst link='https://www.instagram.com/lunico_ae/' className="w-8 h-8" />
           </div>
         </div>
-
-        {/* Правая часть */}
         <div className="md:w-1/2 pl-4">
           <h3 className="text-[#DEBC63] text-2xl font-bold">Join the Lúnico guest list</h3>
           <p className="text-white mt-2 mb-4">

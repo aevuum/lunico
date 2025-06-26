@@ -16,7 +16,7 @@ const Header = ({ className }) => {
         <ul className="flex gap-12 text-white text-sm font-extrabold">
           <li className="relative group">
             <a
-              href="#"
+              href="#menus"
               className="transition-colors duration-300 ease-in-out group-hover:text-amber-300"
             >
               Menus
@@ -25,7 +25,7 @@ const Header = ({ className }) => {
           </li>
           <li className="relative group">
             <a
-              href="#"
+              href="#restaurant"
               className="transition-colors duration-300 ease-in-out group-hover:text-amber-300"
             >
               Restaurant
@@ -34,7 +34,7 @@ const Header = ({ className }) => {
           </li>
           <li className="relative group">
             <a
-              href="#"
+              href="#bar"
               className="transition-colors duration-300 ease-in-out group-hover:text-amber-300"
             >
               Bar
@@ -43,7 +43,7 @@ const Header = ({ className }) => {
           </li>
           <li className="relative group">
             <a
-              href="#"
+              href="#menus"
               className="transition-colors duration-300 ease-in-out group-hover:text-amber-300"
             >
               Contact Us

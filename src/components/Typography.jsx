@@ -10,6 +10,3 @@ const Typography = ({ children, className }) => {
 };
 
 export default Typography;
-
-
-// TODO: Добавь смену размера в компонент

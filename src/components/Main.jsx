@@ -7,7 +7,7 @@ import Typography from "./Typography";
 import SideButton from "./SideButton";
 import { useEffect, useRef, useState } from "react";
 import TransparentButton from "./TransparentButton";
-import CarouselFour from "./CarouselFour";
+import CarouselFour from "./CarouselCross";
 
 const images = [
   { id: 1, src: "3-1-576x720.jpg", alt: "Image 1" },
@@ -15,7 +15,7 @@ const images = [
   { id: 3, src: "10-1-720x405.jpg", alt: "Image 3" },
 ];
 
-const imagesTwo = [
+const slides = [
   {
     top: { src: "5-1-853x1280.jpg", alt: "Top Image" },
     bottom: { src: "4-1-480x720.jpg", alt: "Bottom Image" },
@@ -66,27 +66,29 @@ const Main = () => {
 
   return (
     <main>
-      <section className="relative w-full h-max min-h-[50rem] bg-cover bg-center bg-[url('/images/lunico-dubai-interior-2-1.jpg')] flex items-center justify-center overflow-hidden">
-        <Header
-          className={clsx(
-            "z-10 duration-300 ease-in-out",
-            isScrollDown ? "w-full bg-black/50" : ""
-          )}
-        />
-        <div className="absolute inset-0 bg-black/60 z-0"></div>
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            background: `radial-gradient(circle at center, transparent 20%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.9) 100%)`,
-          }}
-        ></div>
-        <div className="mt-14 relative text-white text-center font-[Against]">
-          <Typography className="text-3xl text-white">
-            Taste Your Destiny
-          </Typography>
-          <p className="text-xl mt-2">Book your table</p>
-        </div>
-      </section>
+      <a name="restaurant">
+        <section className="relative w-full h-max min-h-[50rem] bg-cover bg-center bg-[url('/images/lunico-dubai-interior-2-1.jpg')] flex items-center justify-center overflow-hidden">
+          <Header
+            className={clsx(
+              "z-10 duration-300 ease-in-out",
+              isScrollDown ? "w-full bg-black/50" : ""
+            )}
+          />
+          <div className="absolute inset-0 bg-black/60 z-0"></div>
+          <div
+            className="absolute inset-0 z-0"
+            style={{
+              background: `radial-gradient(circle at center, transparent 20%, rgba(0,0,0,0.6) 70%, rgba(0,0,0,0.9) 100%)`,
+            }}
+          ></div>
+          <div className="mt-14 relative text-white text-center font-[Against]">
+            <Typography className="text-3xl text-white">
+              Taste Your Destiny
+            </Typography>
+            <p className="text-xl mt-2">Book your table</p>
+          </div>
+        </section>
+      </a>
       <section className="bg-black w-full h-max min-h-[60rem]">
         <div className="text-white pt-6 flex justify-between px-[30rem]">
           <div className="">
@@ -149,26 +151,28 @@ const Main = () => {
         <Carousel images={images} preview={preview}></Carousel>
       </section>
       <section className="w-full h-max min-h-[20rem] bg-cover bg-center bg-[url('/images/img-bananaleaves-8-scaled-1.jpg')]">
-        <div className="flex flex-col items-center justify-center h-full text-center px-4 py-16">
-          <Typography className="text-white text-6xl mb-12">Menus</Typography>
-          <div className="flex flex-col items-center gap-4">
-            <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/Lunico_A_LA_CARTE_180x340_01-2025-web.pdf">
-              A la carte
-            </SideButton>
-            <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/Lunico_Desserts_180x160_01-2025_Final_WEB.pdf">
-              Desserts
-            </SideButton>
-            <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/LUN_DRINK_MENU_WEB-1.pdf">
-              Drink Menu
-            </SideButton>
-            <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/LUNICO_Brunch_Menu_152x340_03-202_04_WEB.pdf">
-              Brunch Menu
-            </SideButton>
-            <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/LUNICO_Viva_La_Noche_Menu_152x340_03-2025_05_WEB.pdf">
-              Viva La Noche
-            </SideButton>
+        <a name="menus">
+          <div className="flex flex-col items-center justify-center h-full text-center px-4 py-16">
+            <Typography className="text-white text-6xl mb-12">Menus</Typography>
+            <div className="flex flex-col items-center gap-4">
+              <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/Lunico_A_LA_CARTE_180x340_01-2025-web.pdf">
+                A la carte
+              </SideButton>
+              <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/Lunico_Desserts_180x160_01-2025_Final_WEB.pdf">
+                Desserts
+              </SideButton>
+              <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/LUN_DRINK_MENU_WEB-1.pdf">
+                Drink Menu
+              </SideButton>
+              <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/LUNICO_Brunch_Menu_152x340_03-202_04_WEB.pdf">
+                Brunch Menu
+              </SideButton>
+              <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/LUNICO_Viva_La_Noche_Menu_152x340_03-2025_05_WEB.pdf">
+                Viva La Noche
+              </SideButton>
+            </div>
           </div>
-        </div>
+        </a>
       </section>
       <section
         ref={sectionRef}
@@ -198,75 +202,140 @@ const Main = () => {
           />
         </div>
       </section>
-      <section className="w-full min-h-[120rem] py-24 bg-gradient-to-b from-[#AB8E61] via-[#EBEBB0] to-[#B69E6D]">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="md:w-1/2 text-left">
-            <Typography className="text-7xl mb-6">Restaurant</Typography>
-            <p className="text-lg mb-8">
-              Explore our menu and discover a gastronomic world rooted in
-              Spanish and Latin traditions, culture, flavors, ingredients. Each
-              dish tells a story. From A la Carte selections to desserts and
-              tapas, our offerings are crafted with fresh and bold ingredients
-              and endemic products.
-            </p>
-            <TransparentButton>View gallery</TransparentButton>
+      <a name="bar">
+        <section className="w-full min-h-[120rem] py-24 bg-gradient-to-b from-[#AB8E61] via-[#EBEBB0] to-[#B69E6D]">
+          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="md:w-1/2 text-left">
+              <Typography className="text-7xl mb-6">Restaurant</Typography>
+              <p className="text-lg mb-8">
+                Explore our menu and discover a gastronomic world rooted in
+                Spanish and Latin traditions, culture, flavors, ingredients.
+                Each dish tells a story. From A la Carte selections to desserts
+                and tapas, our offerings are crafted with fresh and bold
+                ingredients and endemic products.
+              </p>
+              <TransparentButton link="#gallery">
+                View gallery
+              </TransparentButton>
+            </div>
+            <div className="md:w-1/2 flex justify-center">
+              <img
+                src="/images/img-restaurant-2-1.png"
+                alt="image"
+                className="h-[50rem] rounded-xl shadow-xl w-full max-w-md object-cover"
+              />
+            </div>
           </div>
-          <div className="md:w-1/2 flex justify-center">
-            <img
-              src="/images/img-restaurant-2-1.png"
-              alt="image"
-              className="h-[50rem] rounded-xl shadow-xl w-full max-w-md object-cover"
-            />
+          <div className="max-w-6xl py-12 mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="md:w-1/2 flex justify-center order-2 md:order-1">
+              <img
+                src="/images/img-bar-2-1-691x720.png"
+                alt="image"
+                className="h-[50rem] rounded-xl shadow-xl w-full max-w-md object-cover"
+              />
+            </div>
+            <div className="md:w-1/2 text-left order-1 md:order-2">
+              <Typography className="text-7xl mb-6">Late night bar</Typography>
+              <p className="text-lg mb-8">
+                As day fades, Lúnico transforms into a lively, late-night bar.
+                With a drink in hand, surrounded by vibrant music and
+                captivating visuals, you'll feel the pulse of the night. Choose
+                from a selection of elemental cocktails or classic favorites
+                with a twist, and let the evening take you wherever your senses
+                lead.
+              </p>
+              <TransparentButton link="#gallery">
+                View gallery
+              </TransparentButton>
+            </div>
           </div>
-        </div>
-        <div className="max-w-6xl py-12 mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="md:w-1/2 flex justify-center order-2 md:order-1">
-            <img
-              src="/images/img-bar-2-1-691x720.png"
-              alt="image"
-              className="h-[50rem] rounded-xl shadow-xl w-full max-w-md object-cover"
-            />
+          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div className="md:w-1/2 text-left">
+              <Typography className="text-7xl mb-6">Private events</Typography>
+              <p className="text-lg mb-8">
+                For larger gatherings, such as business lunches, birthday
+                celebrations or bigger private events, we can offer a variety of
+                semi-private spaces that provide the perfect ambiance for any
+                occasion. Contact us for a complete list of spaces, capacities
+                or set menu options to create an event that is as unique as you
+                are.
+              </p>
+              <TransparentButton>Make an enquiry</TransparentButton>
+            </div>
+            <div className="md:w-1/2 flex justify-center">
+              <img
+                src="/images/9-1-501x720.png"
+                alt="image"
+                className="h-[50rem] w-full rounded-xl shadow-xl max-w-md object-cover"
+              />
+            </div>
           </div>
-          <div className="md:w-1/2 text-left order-1 md:order-2">
-            <Typography className="text-7xl mb-6">Late night bar</Typography>
-            <p className="text-lg mb-8">
-              As day fades, Lúnico transforms into a lively, late-night bar.
-              With a drink in hand, surrounded by vibrant music and captivating
-              visuals, you'll feel the pulse of the night. Choose from a
-              selection of elemental cocktails or classic favorites with a
-              twist, and let the evening take you wherever your senses lead.
-            </p>
-            <TransparentButton>View gallery</TransparentButton>
+        </section>
+      </a>
+      <a name="gallery">
+        <section className="bg-black w-full h-max min-h-[50rem] overflow-x-hidden">
+          <div className="py-24">
+            <CarouselFour slides={slides} />
           </div>
-        </div>
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
-          <div className="md:w-1/2 text-left">
-            <Typography className="text-7xl mb-6">Private events</Typography>
-            <p className="text-lg mb-8">
-              For larger gatherings, such as business lunches, birthday
-              celebrations or bigger private events, we can offer a variety of
-              semi-private spaces that provide the perfect ambiance for any
-              occasion. Contact us for a complete list of spaces, capacities or
-              set menu options to create an event that is as unique as you are.
-            </p>
-            <TransparentButton>Make an enquiry</TransparentButton>
-          </div>
-          <div className="md:w-1/2 flex justify-center">
-            <img
-              src="/images/9-1-501x720.png"
-              alt="image"
-              className="h-[50rem] w-full rounded-xl shadow-xl max-w-md object-cover"
-            />
-          </div>
-        </div>
-      </section>
-      <section className="bg-black w-full h-max min-h-[50rem] overflow-x-hidden">
-        <div className="py-24">
-          <CarouselFour images={imagesTwo}/>
-        </div>
-      </section>
-      <section className="bg-cover bg-center bg-[url('/images/1_View21-scaled-1.jpg')] w-full h-max min-h-[50rem] overflow-x-hidden">
+        </section>
+      </a>
+      <section className="bg-cover bg-center bg-[url('/images/1_View21-scaled-1.jpg')] w-full min-h-[70rem] flex items-center justify-center px-4 relative">
+        <div className="relative max-w-4xl mx-auto bg-[#111] p-8 md:p-12 rounded-2xl text-center z-10 shadow-2xl">
+          <Typography className="text-[#E4C166]">Contact us</Typography>
+          <h2 className="text-white text-2xl font-bold mt-4">Lúnico</h2>
+          <p className="text-gray-300 mt-2">
+            Unit FB 10, J1 Beach La Mer, Dubai, UAE
+          </p>
 
+          <h3 className="text-white text-xl font-semibold mt-6">
+            Reservations:
+          </h3>
+          <p className="text-[#8B763E] mt-2">
+            lunico@lunicodubai.ae <br />
+            +971 50 2776 503 <br />
+            WhatsApp
+          </p>
+          <p className="text-gray-300 mt-6">
+            The last reservation for À la Carte is at 10:30 PM from Sunday to
+            Wednesday and 11:00 PM from Thursday to Saturday. After this time,
+            we accept reservations only for drinks and tapas. <br />
+            <br />
+            We would be delighted to welcome you for dinner with children.
+            Please note that for your comfort, we can accommodate families on
+            the ground floor only. We look forward to hosting you! <br />
+            <br />
+            For reservations of more than 10 guests, please contact us at <span className="text-[#8B763E]">+971
+            50 2776 503</span>.
+          </p>
+          <ul className="text-gray-300 mt-6 space-y-2 text-left inline-block mx-auto">
+            <li>Monday 12 PM – 1 AM</li>
+            <li>Tuesday 12 PM – 1 AM</li>
+            <li>Wednesday 12 PM – 1 AM</li>
+            <li>Thursday 12 PM – 1 AM</li>
+            <li>Friday 12 PM – 2 AM</li>
+            <li>Saturday 1 PM – 2 AM</li>
+            <li>Sunday 12 PM – 1 AM</li>
+          </ul>
+          <div className="mt-8">
+            <h3 className="text-white text-xl font-semibold">Dress code</h3>
+            <p className="text-gray-300 mt-2">
+              Our dress code is smart casual from 12 PM – 6 PM and smart elegant
+              from 6:00 PM. Please avoid casual or beachwear and overly casual
+              denim (no shorts and open shoes for gents).
+            </p>
+          </div>
+          <div className="mt-8">
+            <h3 className="text-white text-xl font-semibold">
+              Press and media enquiries
+            </h3>
+            <p className="text-gray-300 mt-2">
+              For press and media enquiries, please contact <span className='text-[#8B763E]'>media@lunicodubai.ae</span>
+            </p>
+          </div>
+          <div className="mt-8">
+            <MainButton>Contact us</MainButton>
+          </div>
+        </div>
       </section>
     </main>
   );

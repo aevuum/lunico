@@ -12,7 +12,7 @@ const InlineButton = ({ children, className, link }) => {
         >
           {children}
         </button>
-        <span className="absolute left-0 bottom-0 w-full h-[2px] bg-amber-300 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+        <span className="absolute max-w-30 left-0 bottom-0 w-full h-[2px] bg-amber-300 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
       </a>
     </div>
   );
