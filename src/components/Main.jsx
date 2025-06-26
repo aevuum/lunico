@@ -6,6 +6,7 @@ import Carousel from "./Carousel";
 import Typography from "./Typography";
 import SideButton from "./SideButton";
 import { useEffect, useRef, useState } from "react";
+import TransparentButton from "./TransparentButton";
 
 const images = [
   { id: 1, src: "3-1-576x720.jpg", alt: "Image 1" },
@@ -16,7 +17,8 @@ const images = [
 const preview = {
   src: "img-bananaleaves-4-1-1.jpg",
   alt: "Preview Image",
-  description: "At Lúnico, flavors are inspired by traditional Spanish cuisine, rooted in the elements and history",
+  description:
+    "At Lúnico, flavors are inspired by traditional Spanish cuisine, rooted in the elements and history",
 };
 
 const Main = () => {
@@ -24,15 +26,15 @@ const Main = () => {
   const sectionRef = useRef(null);
   const isScrollDown = useScroll();
 
-
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           if (sectionRef.current) {
-            const scrollTop = window.scrollY || document.documentElement.scrollTop;
-            const slowOffset = scrollTop * 0.10;
+            const scrollTop =
+              window.scrollY || document.documentElement.scrollTop;
+            const slowOffset = scrollTop * 0.1;
 
             setOffset(slowOffset);
           }
@@ -42,8 +44,8 @@ const Main = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -153,31 +155,95 @@ const Main = () => {
         </div>
       </section>
       <section
-      ref={sectionRef}
-      className="relative w-full h-screen overflow-hidden bg-black"
-    >
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 ease-in-out"
-        style={{
-          backgroundImage: "url('/images/pattern-golf.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          transform: `translateY(${isScrollDown ? -offset : offset}px)`,
-          willChange: 'transform',
-        }}
-      />
-      <div className="relative z-10 flex flex-col items-center justify-center h-full text-center py-12">
-        <div>
-          <p className="text-xl text-amber-300">Spanish fine-dining</p>
-          <Typography className="text-white text-8xl mt-4">Taste your destiny</Typography>
-        </div>
-        <img
-          src="/public/gif/5_Water-1-ezgif.com-video-to-gif-converter.gif"
-          alt="gif"
-          className="h-[60rem] w-[40rem] rounded-full shadow-xl ml-34"
+        ref={sectionRef}
+        className="relative w-full h-screen overflow-hidden bg-black"
+      >
+        <div
+          className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 ease-in-out"
+          style={{
+            backgroundImage: "url('/images/pattern-golf.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            transform: `translateY(${isScrollDown ? -offset : offset}px)`,
+            willChange: "transform",
+          }}
         />
-      </div>
-    </section>
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center py-12">
+          <div>
+            <p className="text-xl text-amber-300">Spanish fine-dining</p>
+            <Typography className="text-white text-8xl mt-4">
+              Taste your destiny
+            </Typography>
+          </div>
+          <img
+            src="/public/gif/5_Water-1-ezgif.com-video-to-gif-converter.gif"
+            alt="gif"
+            className="h-[60rem] w-[40rem] rounded-full shadow-xl ml-34"
+          />
+        </div>
+      </section>
+      <section className="w-full min-h-[120rem] py-24 bg-gradient-to-b from-[#AB8E61] via-[#EBEBB0] to-[#B69E6D]">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="md:w-1/2 text-left">
+            <Typography className="text-7xl mb-6">Restaurant</Typography>
+            <p className="text-lg mb-8">
+              Explore our menu and discover a gastronomic world rooted in
+              Spanish and Latin traditions, culture, flavors, ingredients. Each
+              dish tells a story. From A la Carte selections to desserts and
+              tapas, our offerings are crafted with fresh and bold ingredients
+              and endemic products.
+            </p>
+            <TransparentButton>View gallery</TransparentButton>
+          </div>
+          <div className="md:w-1/2 flex justify-center">
+            <img
+              src="/public/images/img-restaurant-2-1.png"
+              alt="image"
+              className="h-[50rem] rounded-xl shadow-xl w-full max-w-md object-cover"
+            />
+          </div>
+        </div>
+        <div className="max-w-6xl py-12 mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="md:w-1/2 flex justify-center order-2 md:order-1">
+            <img
+              src="/public/images/img-bar-2-1-691x720.png"
+              alt="image"
+              className="h-[50rem] rounded-xl shadow-xl w-full max-w-md object-cover"
+            />
+          </div>
+          <div className="md:w-1/2 text-left order-1 md:order-2">
+            <Typography className="text-7xl mb-6">Late night bar</Typography>
+            <p className="text-lg mb-8">
+              As day fades, Lúnico transforms into a lively, late-night bar.
+              With a drink in hand, surrounded by vibrant music and captivating
+              visuals, you'll feel the pulse of the night. Choose from a
+              selection of elemental cocktails or classic favorites with a
+              twist, and let the evening take you wherever your senses lead.
+            </p>
+            <TransparentButton>View gallery</TransparentButton>
+          </div>
+        </div>
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-12">
+          <div className="md:w-1/2 text-left">
+            <Typography className="text-7xl mb-6">Private events</Typography>
+            <p className="text-lg mb-8">
+              For larger gatherings, such as business lunches, birthday
+              celebrations or bigger private events, we can offer a variety of
+              semi-private spaces that provide the perfect ambiance for any
+              occasion. Contact us for a complete list of spaces, capacities or
+              set menu options to create an event that is as unique as you are.
+            </p>
+            <TransparentButton>Make an enquiry</TransparentButton>
+          </div>
+          <div className="md:w-1/2 flex justify-center">
+            <img
+              src="/public/images/9-1-501x720.png"
+              alt="image"
+              className="h-[50rem] w-full rounded-xl shadow-xl max-w-md object-cover"
+            />
+          </div>
+        </div>
+      </section>
     </main>
   );
 };

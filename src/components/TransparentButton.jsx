@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-const MainButton = ({ children, className }) => {
+const TransparentButton = ({ children, className }) => {
   const [hover, setHover] = useState(false);
 
   return (
@@ -10,11 +10,10 @@ const MainButton = ({ children, className }) => {
       className={clsx(
         "relative inline-flex items-center justify-center px-8 py-4 text-sm font-medium rounded-full overflow-hidden transition-all duration-300 ease-in-out",
         "before:absolute before:right-0 before:top-0 before:w-1/2 before:h-full",
-        "before:bg-gradient-to-l from-[#AB8E61] via-[#EBEBB0] to-[#B69E6D] before:to-transparent before:opacity-70",
+        "",
         "before:transition-transform before:duration-300 before:ease-in-out",
         "before:origin-right hover:before:w-full hover:before:origin-right",
-        "bg-[#B2884E] text-white",
-        "hover:brightness-110 active:brightness-90",
+        "bg-transparent border-black border-1 text-white hover:bg-amber-200",
         className
       )}
       onMouseEnter={() => setHover(true)}
@@ -33,4 +32,4 @@ const MainButton = ({ children, className }) => {
   );
 };
 
-export default MainButton;
+export default TransparentButton;
