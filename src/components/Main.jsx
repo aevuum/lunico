@@ -12,6 +12,12 @@ const images = [
   { id: 3, src: "10-1-720x405.jpg", alt: "Image 3" },
 ];
 
+const preview = {
+  src: "img-bananaleaves-4-1-1.jpg",
+  alt: "Preview Image",
+  description: "At Lúnico, flavors are inspired by traditional Spanish cuisine, rooted in the elements and history",
+};
+
 const Main = () => {
   const isScrollDown = useScroll();
   return (
@@ -96,7 +102,7 @@ const Main = () => {
         </div>
       </section>
       <section className="bg-black w-full h-max min-h-[50rem] overflow-x-hidden">
-        <Carousel images={images}></Carousel>
+        <Carousel images={images} preview={preview}></Carousel>
       </section>
       <section className="w-full h-max min-h-[20rem] bg-cover bg-center bg-[url('/images/img-bananaleaves-8-scaled-1.jpg')]">
         <div className="flex flex-col items-center justify-center h-full text-center px-4 py-16">
@@ -117,6 +123,14 @@ const Main = () => {
             <SideButton link="https://www.lunicodubai.ae/wp-content/uploads/LUNICO_Viva_La_Noche_Menu_152x340_03-2025_05_WEB.pdf">
               Viva La Noche
             </SideButton>
+          </div>
+        </div>
+      </section>
+      <section className="bg-black w-full h-max min-h-[50rem] overflow-x-hidden">
+        <div>
+          <div>
+            <p className="text-sm text-amber-300">Spanish fine-dining</p>
+            <Typography className='text-white'>Taste your destiny</Typography>
           </div>
         </div>
       </section>

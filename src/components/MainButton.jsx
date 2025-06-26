@@ -20,11 +20,11 @@ const MainButton = ({ children, className }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      <span className="flex items-center gap-2 z-10">
+      <span className="text-black flex items-center gap-2 z-10">
         {children}
         <FaArrowRightLong
           className={clsx(
-            "text-white transition-transform duration-300 ease-in-out",
+            "transition-transform duration-300 ease-in-out",
             hover && "translate-x-1"
           )}
         />
