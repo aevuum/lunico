@@ -176,7 +176,7 @@ const Main = () => {
       </section>
       <section
         ref={sectionRef}
-        className="relative w-full h-screen overflow-hidden bg-black"
+        className="relative w-full min-h-[40rem] overflow-hidden bg-black"
       >
         <div
           className="absolute inset-0 bg-cover bg-center z-0 transition-transform duration-700 ease-in-out"

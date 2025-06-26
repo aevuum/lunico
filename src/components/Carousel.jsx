@@ -28,7 +28,7 @@ const Carousel = ({ preview, images }) => {
             drag: true,
             height: '40rem',
             classes: {
-              pagination: 'splide__pagination custom-pagination',
+              pagination: 'custom-pagination',
             },
           }}
         >
@@ -42,6 +42,9 @@ const Carousel = ({ preview, images }) => {
             </SplideSlide>
           ))}
         </Splide>
+        <div className="custom-pagination-wrapper mt-4 flex justify-center">
+          {/* Splide автоматически заполнит точки здесь через JS */}
+        </div>
       </div>
     </div>
   );
