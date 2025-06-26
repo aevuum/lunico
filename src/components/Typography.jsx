@@ -1,4 +1,7 @@
 import clsx from "clsx"
+import '../main.css'
+
+
 
 
 const Typography = ({ children, className }) => {

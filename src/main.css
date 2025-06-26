@@ -2,17 +2,16 @@
 @import '@splidejs/splide/css';
 
 
+
+@font-face {
+  font-family: 'Against';
+  src: url('/public/fonts/against.ttf') format('ttf');
+}
+
 * {
   font-family: "Montserrat", sans-serif;
 }
 
-@font-face {
-  font-family: 'Against';
-  src: url('/fonts/Against.ttf');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 
 html {
   scroll-behavior: smooth;
