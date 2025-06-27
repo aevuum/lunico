@@ -1,15 +1,26 @@
-@import 'tailwindcss';
-@import '@splidejs/splide/css';
-
-
+@import url("https://db.onlinewebfonts.com/c/893fdce7fe8ecb381f012ce2edd2dd6c?family=against-Regular");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+@import "@splidejs/splide/css";
 
 @font-face {
-  font-family: 'Against';
-  src: url('/public/fonts/against.ttf') format('ttf');
+    font-family: "against-Regular";
+    src: url("https://db.onlinewebfonts.com/t/893fdce7fe8ecb381f012ce2edd2dd6c.eot");
+    src: url("https://db.onlinewebfonts.com/t/893fdce7fe8ecb381f012ce2edd2dd6c.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/893fdce7fe8ecb381f012ce2edd2dd6c.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/893fdce7fe8ecb381f012ce2edd2dd6c.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/893fdce7fe8ecb381f012ce2edd2dd6c.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/893fdce7fe8ecb381f012ce2edd2dd6c.svg#against-Regular")format("svg");
 }
+
+
 
 * {
   font-family: "Montserrat", sans-serif;
+}
+
+.typography {
+  font-family: "against-Regular", sans-serif;
 }
 
 
@@ -27,7 +38,7 @@ html {
 }
 
 .splide__pagination__page.is_active {
-  @apply bg-amber-300
+  @apply bg-amber-300;
 }
 
 .splide__pagination__page:hover {

@@ -52,7 +52,7 @@ const Header = ({ className }) => {
           </li>
         </ul>
       </nav>
-      <MainButton>Book Now</MainButton>
+      <MainButton link='https://sevn.ly/x9qnWhpT'>Book Now</MainButton>
     </header>
   );
 };
