@@ -44,3 +44,10 @@ html {
 .splide__pagination__page:hover {
   @apply opacity-100 bg-[#E4C166];
 }
+
+@media (max-width: 1024px) {
+  .custom-pagination {
+    transform: translateX(-20%);
+  }
+}
+

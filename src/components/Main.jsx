@@ -88,8 +88,8 @@ const Main = () => {
         </div>
       </section>
       <section className="bg-black w-full h-max min-h-[60rem]">
-        <div className="text-white pt-6 flex justify-between px-[30rem]">
-          <div className="">
+        <div className="text-white pt-6 flex flex-col lg:flex-row items-center lg:justify-between lg:px-[30rem]">
+          <div className="text-center lg:text-left mb-4 lg:mb-0">
             <p>
               Sun to Thur <span className="font-extrabold">12 PM – 1 AM</span>
             </p>
@@ -100,15 +100,15 @@ const Main = () => {
               Sat <span className="font-extrabold">12 PM – 2 AM</span>
             </p>
           </div>
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center lg:items-end">
             <a
-              href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18798.4615674404!2d55.255700499999996!3d25.22666295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43f80055c67f%3A0xe2890ca94980b95e!2sLa%20mer%20beach!5e1!3m2!1sen!2sen!4v1729862528602!5m2!1sen!2sen"
+              href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18798.4615674404!2d55.255700499999996!3d25.22666295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43f80055c67f%3A0xe2890ca94980b95e!2sLa%20mer%20beach!5e1!3m2!1sen!2sen"
               className="ease-in-out duration-200 hover:text-amber-300"
             >
               J1 Beach
             </a>
             <a
-              href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18798.4615674404!2d55.255700499999996!3d25.22666295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43f80055c67f%3A0xe2890ca94980b95e!2sLa%20mer%20beach!5e1!3m2!1sen!2sen!4v1729862528602!5m2!1sen!2sen"
+              href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18798.4615674404!2d55.255700499999996!3d25.22666295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43f80055c67f%3A0xe2890ca94980b95e!2sLa%20mer%20beach!5e1!3m2!1sen!2sen"
               className="ease-in-out duration-200 hover:text-amber-300"
             >
               La Mer, Dubai, UAE
@@ -145,7 +145,7 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <section className="bg-black w-full h-max min-h-[50rem] overflow-x-hidden">
+      <section className="bg-black w-full h-max min-h-[35rem]  lg:min-h-[50rem] overflow-x-hidden">
         <Carousel images={images} preview={preview}></Carousel>
       </section>
       <section id="menus" className="w-full h-max min-h-[20rem] bg-cover bg-center bg-[url('/images/img-bananaleaves-8-scaled-1.jpg')]">
@@ -194,7 +194,7 @@ const Main = () => {
           <img
             src="/gif/5_Water-1-ezgif.com-video-to-gif-converter.gif"
             alt="gif"
-            className="h-[60rem] w-[40rem] rounded-full shadow-xl ml-34"
+            className="h-[60rem] w-[40rem] rounded-full shadow-xl ml-4 lg:ml-34"
           />
         </div>
       </section>

@@ -9,7 +9,7 @@ const MainButton = ({ children, className, link }) => {
     <a href={link}>
       <button
         className={clsx(
-          "max-w-42 relative inline-flex px-8 py-4 text-sm font-medium rounded-full overflow-hidden transition-all duration-300 ease-in-out bg-gradient-to-r from-[#B0854B] via-[#EADDA7] to-[#B0854B]",
+          "max-w-42 relative px-8 py-4 text-sm font-medium rounded-full overflow-hidden transition-all duration-300 ease-in-out bg-gradient-to-r from-[#B0854B] via-[#EADDA7] to-[#B0854B]",
           className
         )}
         onMouseEnter={() => setHover(true)}
